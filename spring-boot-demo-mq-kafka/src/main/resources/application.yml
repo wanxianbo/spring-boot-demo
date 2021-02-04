@@ -4,7 +4,7 @@ server:
     context-path: /demo
 spring:
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: 192.168.59.128:9092
     producer:
       retries: 0
       batch-size: 16384
