@@ -65,7 +65,7 @@ public class SpringBootDemoHelloworldApplicationTests {
         }));
         collect3.forEach((key, value) -> System.out.println(key + ":" + value));
 
-        // 进行耳机分组
+        // 进行二级分组
         Map<String, Map<String, List<Product>>> collect4 = list.stream().collect(Collectors.groupingBy(Product::getCategory, Collectors.groupingBy(item -> {
             if (item.getNum() < 3) {
                 return "3";
@@ -99,6 +99,7 @@ public class SpringBootDemoHelloworldApplicationTests {
         System.out.println(sum);
 
         BigDecimal reduce = list.stream().map(Product::getPrice).reduce(BigDecimal.ZERO, BigDecimal::add);
+
         System.out.println(reduce.doubleValue());
 
     }
